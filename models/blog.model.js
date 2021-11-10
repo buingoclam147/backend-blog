@@ -11,7 +11,7 @@ const Blog = new mongoose.Schema({
         require: true,
         minlength: 1
     },
-    sensorId:{
+    censorId:{
         type: mongoose.Types.ObjectId,
         require: true,
         minlength: 1

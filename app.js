@@ -25,17 +25,20 @@ const {
   Category,
   Customer,
   Blog,
+  Censor,
   Auth
 } = require('./models')
 //declare route
 const categoryRouter = require('./routes/category.route');
 const customerRouter = require('./routes/customer.route');
 const blogRouter = require('./routes/blog.route');
+const censorRouter = require('./routes/censor.route');
 const authRouter = require('./routes/auth.route');
 // create API 
 app.use('/api/category', categoryRouter);
 app.use('/api/customer', customerRouter);
 app.use('/api/blog', blogRouter);
+app.use('/api/censor', censorRouter);
 app.use('/api/auth', authRouter);
 
 
