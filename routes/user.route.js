@@ -1,9 +1,8 @@
 const express = require('express')
 const router = express.Router();
 
-const { getList, getOne, create, deleteMany, update, deleteOne } = require('../controllers/customer.controller');
+const {  getOne, create, deleteMany, update, deleteOne } = require('../controllers/user.controller');
 
-router.get('/', getList)
 router.get('/:id', getOne);
 router.post('/', create);
 router.post('/delete-many', deleteMany);

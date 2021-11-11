@@ -1,9 +1,8 @@
 const utils = require('../shared/utils');
-const { Employe } = require('../models');
-const { Customer } = require('../models');
+const { User } = require('../models');
 const login = (req, res) => {
     account = req.body;
-    Employe.find(account).then(x => {
+    User.find(account).then(x => {
         data = x[0];
         delete data._doc.password;
         res.send(data);
@@ -14,19 +13,6 @@ const login = (req, res) => {
         })
     })
 }
-const loginCustomer = (req, res) => {
-    account = req.body;
-    Customer.find(account).then(x => {
-        data = x[0];
-        delete data._doc.password;
-        res.send(data);
-    }).catch(error => {
-        res.send({
-            login:'false'
-        })
-    })
-}
 module.exports = {
-    login,
-    loginCustomer
+    login
 }

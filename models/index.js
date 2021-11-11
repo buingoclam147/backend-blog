@@ -1,7 +1,6 @@
 const Category = require('./category.model');
-const Customer = require('./customer.model');
-const Censor = require('./censor.model');
+const User = require('./user.model');
 const Blog = require('./blog.model');
 module.exports = {
-    Category, Customer, Blog, Censor
+    Category, User, Blog
 }
