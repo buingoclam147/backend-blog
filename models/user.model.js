@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const User = new mongoose.Schema({
     fullName: {
         type: String,
-        require: true,
         minlength: 1,
         trim: true
     },
@@ -21,7 +20,6 @@ const User = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        require: true,
         minlength: 1,
     },
     phoneNumber: {
