@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
 
-const { getList, getOne, create, deleteMany, update, deleteOne } = require('../controllers/blog.controller');
+const { getList, getOne, create, deleteMany, update, deleteOne } = require('../controllers/Blog.controller');
 
 router.get('/', getList)
 router.get('/:id', getOne);
