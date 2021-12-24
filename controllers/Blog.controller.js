@@ -3,18 +3,17 @@ const { Blog } = require('../models');
 const utils = require('../shared/utils');
 
 var getList = (req, res) => {
+    const filter = {};
     const query = req.query;
-    let perPage = Number(query.perPage) || 10;
+    let perPage = Number(query.perPage) || 9;
     let page = Number(query.page) || 0;
-    let searchName = query.searchName ? query.searchName : '';
-    Blog.find({
-        title: { '$regex': `${searchName}` }
-    })
+    if (query.categoryId) filter.categoryId = query.categoryId;
+    if (query.userId) filter.userId = query.userId;
+    if (query.title) filter.title = { $regex: query.title };
+    Blog.find(filter)
         .limit(perPage)
         .skip(perPage * page).then(x => {
-            Blog.find({
-                title: { '$regex': `${searchName}` }
-            }).count().then(count => {
+            Blog.find(filter).count().then(count => {
                 res.send({
                     total: count,
                     data: x

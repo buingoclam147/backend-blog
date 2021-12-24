@@ -43,9 +43,5 @@ const User = new mongoose.Schema({
         type: String,
         trim: true
     },
-    note: {
-        type: String,
-    }
-
 })
 module.exports = mongoose.model('User', User);

@@ -6,34 +6,39 @@ const Blog = new mongoose.Schema({
         require: true,
         minlength: 1
     },
-    customerId:{
+    userId: {
         type: mongoose.Types.ObjectId,
         require: true,
         minlength: 1
     },
-    censorId:{
-        type: mongoose.Types.ObjectId,
-        require: true,
-        minlength: 1
-    },
-    title:{
+    title: {
         type: String,
         minlength: 1,
         require: true,
     },
-    nikname:{
+    nikname: {
         type: String,
         minlength: 1,
         require: true,
     },
-    createAt:{
+    content: {
+        type: String,
+        require: true
+    },
+    createAt: {
         type: Number,
         minlength: 1,
         require: true,
+    },
+    view:{
+        type: Number
+    },
+    backgroundBlog:{
+        type: String,
     },
     status: {
         type: String,
     }
 
 })
-module.exports = mongoose.model('Blog',Blog);
+module.exports = mongoose.model('Blog', Blog);
