@@ -14,5 +14,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.12.14",
     "multer": "^1.4.2"
-  }
+  },
+  "scripts": {
+    "start": "node index.js"}
 }
