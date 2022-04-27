@@ -8,9 +8,8 @@ function generateJWT(playload) {
 
 const login = (req, res) => {
     account = req.body;
-    console.log(account);
     User.find(account).then(x => {
-        data = {_id: x[0]._id, userName:x[0].userName};
+        data = {_id: x[0]._id, userName:x[0].userName, avatar: x[0].avatar};
         token = generateJWT({data});
         return res.status(200).json(token);
     }).catch(error => {
