@@ -8,7 +8,7 @@ function generateJWT(playload) {
 const checkAccout = (req, res) => {
     id = { _id: req.user.data._id };
     User.find(id).then(x => {
-        data = { _id: x[0]._id, userName: x[0].userName, avatar: x[0].avatar };
+        data = { _id: x[0]._id, userName: x[0].userName, avatar: x[0].avatar, role: x[0].role };
         token = generateJWT({ data });
         return res.status(200).json(token);
     }).catch(error => {
@@ -22,7 +22,7 @@ const checkAccout = (req, res) => {
 const login = (req, res) => {
     account = req.body;
     User.find(account).then(x => {
-        data = { _id: x[0]._id, userName: x[0].userName, avatar: x[0].avatar };
+        data = { _id: x[0]._id, userName: x[0].userName, avatar: x[0].avatar, role: x[0].role };
         token = generateJWT({ data });
         return res.status(200).json(token);
     }).catch(error => {
