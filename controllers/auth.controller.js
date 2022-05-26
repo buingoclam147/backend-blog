@@ -25,8 +25,7 @@ const login = (req, res) => {
     User.find(account).then(x => {
         data = { _id: x[0]._id, userName: x[0].userName, avatar: x[0].avatar, role: x[0].role };
         token = generateJWT({ data });
-        req.cookies.token = token;
-        console.log(token);
+        res.cookie( 'token', token, { sameSite: 'lax' });
         return res.status(200).json(token);
     }).catch(error => {
         res.status(400).send({

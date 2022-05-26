@@ -20,8 +20,18 @@ app.use(express.static('./upload'))
 
 const multer = require('multer');
 
-
-app.use(cors())
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'https://website-blog-five.vercel.app/');
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+app.use(
+  cors({
+    origin: [process.env.PORT, process.env.PORT],
+    credentials: true,
+  })
+)
 // declare all models 
 const {
   Category,
