@@ -21,14 +21,14 @@ app.use(express.static('./upload'))
 const multer = require('multer');
 
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://website-blog-five.vercel.app/');
+  res.header('Access-Control-Allow-Origin', 'https://website-blog-five.vercel.app');
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 app.use(
   cors({
-    origin: [process.env.PORT, process.env.PORT],
+    origin: ['http://backend-nodejs-blog.herokuapp.com/', 'https://backend-nodejs-blog.herokuapp.com/'],
     credentials: true,
   })
 )
