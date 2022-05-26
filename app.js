@@ -28,7 +28,7 @@ app.use(function(req, res, next) {
 });
 app.use(
   cors({
-    origin: ['http://backend-nodejs-blog.herokuapp.com/', 'https://backend-nodejs-blog.herokuapp.com/'],
+    origin: ['http://backend-nodejs-blog.herokuapp.com/api/', 'https://backend-nodejs-blog.herokuapp.com/api/'],
     credentials: true,
   })
 )
